@@ -18,27 +18,56 @@
                             <Toolbar>
                                 <SearchField />
                             </Toolbar>
+                               
+                        </IconTabFilter>
+                            <IconTabFilter text="Adicionar">
                                 <Panel width="auto" class="sapUiResponsiveMargin">
                                 <f:SimpleForm id="simpleFormChange" title="Todos os Contatos:" editable="true" class="editableForm">
 									<f:content>
 										<Label text="Nome"/>
-										<Input value="{address>/Nome}"/>
+										<Input value=""/>
 										<Label text="Endereco"/>
-										<Input value="{address>/Endereco}"/>
+										<Input value=""/>
 										<Label text="Telefone:"/>
-										<Input value="{address>/Telefone}"/>
+										<Input value=""/>
 									</f:content>
 								</f:SimpleForm>
                                 </Panel>
-
-                        </IconTabFilter>
-                        <IconTabFilter text="Adicionar">
-                        </IconTabFilter>
+                            </IconTabFilter>
                         <IconTabFilter text="Alterar">
+                              <Toolbar>
+                                <SearchField />
+                            </Toolbar>
+                                  <Panel width="auto" class="sapUiResponsiveMargin">
+                                <f:SimpleForm id="simpleFormChangeA" title="Todos os Contatos:" editable="true" class="editableForm">
+									<f:content>
+										<Label text="Nome"/>
+										<Input value=""/>
+										<Label text="Endereco"/>
+										<Input value=""/>
+										<Label text="Telefone:"/>
+										<Input value=""/>
+									</f:content>
+								</f:SimpleForm>
+                                </Panel>
                         </IconTabFilter>
                         <IconTabFilter text="Remover">
-                        </IconTabFilter>
-                               
+                              <Toolbar>
+                                <SearchField />
+                            </Toolbar>
+                                  <Panel width="auto" class="sapUiResponsiveMargin">
+                                <f:SimpleForm id="simpleFormChangeR" title="Todos os Contatos:" editable="true" class="editableForm">
+									<f:content>
+										<Label text="Nome"/>
+										<Input value=""/>
+										<Label text="Endereco"/>
+										<Input value=""/>
+										<Label text="Telefone:"/>
+										<Input value=""/>
+									</f:content>
+								</f:SimpleForm>
+                                </Panel>
+                        </IconTabFilter>                              
                         </items>
                     </IconTabBar>
                 </content>               

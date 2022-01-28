@@ -1,1 +1,0 @@
-sap.ui.define(["sap/ui/core/mvc/XMLView"],function(e){"use strict";e.create({viewName:"Quickstart.App"}).then(function(e){e.placeAt("content")})});
