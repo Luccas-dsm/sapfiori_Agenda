@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/m/MessageToast"],function(e,n){return e.extend("webapp.controller.list",{})});

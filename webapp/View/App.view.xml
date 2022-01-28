@@ -1,0 +1,50 @@
+
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="webapp.controller.app" 
+    xmlns:f="sap.ui.layout.form" 
+    displayBlock="true"
+	  
+    >
+
+     <App>
+        <pages>
+            <Page title="Agenda">
+                <content>
+                    <IconTabBar>
+                        <items>
+                        <IconTabFilter text="Contatos">
+                            <Toolbar>
+                                <SearchField />
+                            </Toolbar>
+                                <Panel width="auto" class="sapUiResponsiveMargin">
+                                <f:SimpleForm id="simpleFormChange" title="Todos os Contatos:" editable="true" class="editableForm">
+									<f:content>
+										<Label text="Nome"/>
+										<Input value="{address>/Nome}"/>
+										<Label text="Endereco"/>
+										<Input value="{address>/Endereco}"/>
+										<Label text="Telefone:"/>
+										<Input value="{address>/Telefone}"/>
+									</f:content>
+								</f:SimpleForm>
+                                </Panel>
+
+                        </IconTabFilter>
+                        <IconTabFilter text="Adicionar">
+                        </IconTabFilter>
+                        <IconTabFilter text="Alterar">
+                        </IconTabFilter>
+                        <IconTabFilter text="Remover">
+                        </IconTabFilter>
+                               
+                        </items>
+                    </IconTabBar>
+                </content>               
+            </Page>
+        </pages>
+    </App>
+</mvc:View>
+
+
