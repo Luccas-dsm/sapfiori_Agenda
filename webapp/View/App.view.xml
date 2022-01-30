@@ -2,10 +2,9 @@
 <mvc:View 
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    controllerName="webapp.controller.app" 
+    controllerName="webapp.controller.app"
     xmlns:f="sap.ui.layout.form" 
     displayBlock="true"
-	  
     >
 
      <App>
@@ -15,14 +14,21 @@
                     <IconTabBar>
                         <items>
                         <IconTabFilter text="Contatos">
-                            <Toolbar>
-                                <SearchField />
-                            </Toolbar>
-                               
+                         
+                            <List id="contatosList" items="{path: '/contatos', templateShareable:false}">
+                                <items>
+                                    <StandardListItem
+                                        title="{nome}"
+                                        description="{telefone}
+                                        ,{endereco}"
+                                    />
+                                </items>
+                            </List>
+
                         </IconTabFilter>
                             <IconTabFilter text="Adicionar">
                                 <Panel width="auto" class="sapUiResponsiveMargin">
-                                <f:SimpleForm id="simpleFormChange" title="Todos os Contatos:" editable="true" class="editableForm">
+                                <f:SimpleForm id="simpleFormChange" title="Adicionar um novo Contato:" editable="true" class="editableForm">
 									<f:content>
 										<Label text="Nome"/>
 										<Input value=""/>
@@ -33,13 +39,18 @@
 									</f:content>
 								</f:SimpleForm>
                                 </Panel>
+                                  <Toolbar>
+									<ToolbarSpacer/>
+									<Button text="Adicionar" type="Accept"/>
+									<Button text="Cancelar" type="Reject"/>
+								</Toolbar>
                             </IconTabFilter>
                         <IconTabFilter text="Alterar">
                               <Toolbar>
                                 <SearchField />
                             </Toolbar>
                                   <Panel width="auto" class="sapUiResponsiveMargin">
-                                <f:SimpleForm id="simpleFormChangeA" title="Todos os Contatos:" editable="true" class="editableForm">
+                                <f:SimpleForm id="simpleFormChangeA" title="Alterar dados do Contato:" editable="true" class="editableForm">
 									<f:content>
 										<Label text="Nome"/>
 										<Input value=""/>
@@ -50,23 +61,33 @@
 									</f:content>
 								</f:SimpleForm>
                                 </Panel>
+                                 <Toolbar>
+									<ToolbarSpacer/>
+									<Button text="Alterar" type="Accept"/>
+									<Button text="Cancelar" type="Reject"/>
+								</Toolbar>
                         </IconTabFilter>
                         <IconTabFilter text="Remover">
                               <Toolbar>
                                 <SearchField />
                             </Toolbar>
                                   <Panel width="auto" class="sapUiResponsiveMargin">
-                                <f:SimpleForm id="simpleFormChangeR" title="Todos os Contatos:" editable="true" class="editableForm">
+                                <f:SimpleForm id="simpleFormChangeR" title="Remover Contato:" editable="false" class="editableForm">
 									<f:content>
 										<Label text="Nome"/>
-										<Input value=""/>
+										<Input value="{address>/nome}"/>
 										<Label text="Endereco"/>
-										<Input value=""/>
+										<Input value="{address>/endereco}"/>
 										<Label text="Telefone:"/>
-										<Input value=""/>
+										<Input value="{address>/telefone}"/>
 									</f:content>
 								</f:SimpleForm>
                                 </Panel>
+                                <Toolbar>
+									<ToolbarSpacer/>
+									<Button text="Remover" type="Accept"/>
+									<Button text="Cancelar" type="Reject"/>
+								</Toolbar>
                         </IconTabFilter>                              
                         </items>
                     </IconTabBar>
